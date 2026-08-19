@@ -1,0 +1,6 @@
+{
+  "name": "Bảo Vệ Điện Áp - Voltage Surge Defense",
+  "description": "Trò chơi phản xạ điện tử: Chặn xung điện và quá điện áp bằng tiếp địa, chống quá tải và cầu chì để bảo vệ thiết bị.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

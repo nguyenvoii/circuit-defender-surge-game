@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* Custom electric/neon theme */
+@theme {
+  /* Electric blue for primary actions */
+  --color-electric-blue: #00d4ff;
+  --color-electric-blue-glow: #00f0ff;
+
+  /* Energy yellow/gold for highlights */
+  --color-energy-gold: #ffd700;
+  --color-energy-amber: #f59e0b;
+
+  /* Circuit green for success indicators */
+  --color-circuit-green: #00ff88;
+  --color-emerald-glow: #22c55e;
+
+  /* Danger red for warnings */
+  --color-danger-red: #ef4444;
+  --color-plasma-orange: #f97316;
+
+  /* Plasma purple for special effects */
+  --color-plasma-purple: #a855f7;
+  --color-lightning-violet: #c084fc;
+
+  /* Dark circuit board backgrounds */
+  --color-slate-dark: #060a12;
+  --color-circuit-bg: #0f172a;
+
+  /* Custom glow effects */
+  --glow-blue: 0 0 20px rgba(0, 212, 255, 0.6);
+  --glow-green: 0 0 20px rgba(0, 255, 136, 0.6);
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.6);
+  --glow-amber: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Electric glow effects */
+.electric-glow-blue {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5), 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.electric-glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5), 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.electric-glow-purple {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5), 0 0 30px rgba(168, 85, 247, 0.3);
+}
+
+/* Animated electric pulse */
+@keyframes electricPulse {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+}
+
+.electric-pulse {
+  animation: electricPulse 2s ease-in-out infinite;
+}
+
+/* Circuit board grid pattern */
+.circuit-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 0;
+}
+
+/* Electric border effect */
+.electric-border {
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow:
+    inset 0 0 10px rgba(0, 212, 255, 0.1),
+    0 0 15px rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.electric-border:hover {
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow:
+    inset 0 0 15px rgba(0, 212, 255, 0.15),
+    0 0 25px rgba(0, 212, 255, 0.4);
+}
+
+/* Neon text effects */
+.neon-text-blue {
+  color: #00d4ff;
+  text-shadow:
+    0 0 5px rgba(0, 212, 255, 0.8),
+    0 0 10px rgba(0, 212, 255, 0.6),
+    0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.neon-text-green {
+  color: #00ff88;
+  text-shadow:
+    0 0 5px rgba(0, 255, 136, 0.8),
+    0 0 10px rgba(0, 255, 136, 0.6),
+    0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+/* Button hover effects */
+.electric-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.electric-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.electric-button:hover::before {
+  left: 100%;
+}
+
+/* Progress bar glow */
+.progress-glow {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-animate {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Electric spark animation */
+@keyframes spark {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.spark {
+  animation: spark 0.6s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .mobile-stack {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-text-sm {
+    font-size: 0.75rem;
+  }
+
+  .mobile-p-1 {
+    padding: 0.25rem;
+  }
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 0.05) 25%,
+    rgba(0, 212, 255, 0.2) 50%,
+    rgba(0, 212, 255, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
